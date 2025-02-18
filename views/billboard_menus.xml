@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem
+        id="billboard_menu_root"
+        name="Cinema Billboard"/>
+
+    <menuitem
+        id="billboard_menu_properties"
+        name="Propiedades"
+        parent="billboard_menu_root"/>
+
+    <menuitem
+        id="billboard_menu_advertisements"
+        name="Advertisements"
+        parent="billboard_menu_properties"
+        action="billboard_property_model_action" />
+
+    <menuitem
+        id="billboard_menu_settings"
+        name="Configuración"
+        parent="billboard_menu_root" />
+
+</odoo>

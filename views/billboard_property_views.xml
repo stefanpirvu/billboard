@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+
+        <!-- Acción de ventana para el modelo billboard.property -->
+        <record id="billboard_property_model_action" model="ir.actions.act_window">
+            <field name="name">Properties</field>
+            <field name="res_model">billboard.property</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Vista tipo tree -->
+        <record id="billboard_property_view_tree" model="ir.ui.view">
+            <field name="name">billboard.property.tree</field>
+            <field name="model">billboard.property</field>
+            <field name="arch" type="xml">
+                <tree string="Título">
+                    <field name="titulo"/>
+                    <field name="anio_lanzamiento"/>
+                    <field name="edad_minima"/>
+                    <field name="duracion"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista tipo form -->
+        <record id="billboard_property_view_form" model="ir.ui.view">
+            <field name="name">billboard.property.form</field>
+            <field name="model">billboard.property</field>
+            <field name="arch" type="xml">
+                <form string="Property">
+                    <sheet>
+                        <group>
+                            <field name="titulo"/>
+                            <field name="anio_lanzamiento"/>
+                            <field name="edad_minima"/>
+                            <field name="duracion"/>
+                            <div class="image-container">
+                                <field name="imagen_portada" widget="image" class="img-fluid" style="max-width: 200px; height: auto;" />
+                            </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
