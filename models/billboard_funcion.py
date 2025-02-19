@@ -1,4 +1,5 @@
 from odoo import fields, models, api
+from datetime import timedelta 
 
 class BillboardFuncion(models.Model):
     _name = "billboard.funcion"
@@ -18,9 +19,9 @@ class BillboardFuncion(models.Model):
 
     @api.depends('fecha_y_hora_inicio')
     def _calcular_fecha_y_hora_fin_pelicula(self):
-        # necesito acceder a la duración de la película
-
-
-• Película (Many2one con cine.pelicula, obligatorio)
-• Sala (Many2one con cine.sala, obligatorio)
-• Fecha y hora de fin (Datetime, calculado)
+        for record in self:
+            if record.fecha_y_hora_inicio and record.pelicula.duracion:
+                # Obtener la duración de la película en minutos
+                duracion_minutos = record.pelicula.duracion
+                # Calcular la fecha y hora de fin sumando los minutos a la hora de inicio
+                record.fecha_y_hora_fin = record.fecha_y_hora_inicio + timedelta(minutes=duracion_minutos)

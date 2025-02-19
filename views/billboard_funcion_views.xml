@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+
+        <record id="billboard_funcion_model_action" model="ir.actions.act_window">
+            <field name="name">Funciones</field>
+            <field name="res_model">billboard.funcion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Vista tipo tree -->
+        <record id="billboard_funcion_view_tree" model="ir.ui.view">
+            <field name="name">billboard.funcion.tree</field>
+            <field name="model">billboard.funcion</field>
+            <field name="arch" type="xml">
+                <tree string="Función">
+                    <field name="pelicula"/>
+                    <field name="sala"/>
+                    <field name="fecha_y_hora_inicio" string="Tipo de Sala"/>
+                    <field name="fecha_y_hora_fin"/>
+                    <field name="precio_entrada"/>
+                    <field name="estado"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista tipo form -->
+        <record id="billboard_funcion_view_form" model="ir.ui.view">
+            <field name="name">billboard.funcion.form</field>
+            <field name="model">billboard.funcion</field>
+            <field name="arch" type="xml">
+                <form string="Función">
+                    <sheet>
+                        <group>
+                                <field name="pelicula"/>
+                                <field name="sala"/>
+                                <field name="fecha_y_hora_inicio" string="Tipo de Sala"/>
+                                <field name="fecha_y_hora_fin"/>
+                                <field name="precio_entrada"/>
+                                <field name="estado"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
