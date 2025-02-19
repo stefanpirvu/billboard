@@ -6,19 +6,18 @@
         name="Cinema Billboard"/>
 
     <menuitem
-        id="billboard_menu_properties"
-        name="Propiedades"
+        id="billboard_menu_sala"
+        name="Salas"
         parent="billboard_menu_root"/>
 
     <menuitem
-        id="billboard_menu_advertisements"
-        name="Advertisements"
-        parent="billboard_menu_properties"
-        action="billboard_property_model_action" />
+        id="billboard_menu_pelicula"
+        name="Peliculas"
+        parent="billboard_menu_root"/>
 
     <menuitem
-        id="billboard_menu_settings"
-        name="Configuración"
-        parent="billboard_menu_root" />
+        id="billboard_menu_funcion"
+        name="Funciones"
+        parent="billboard_menu_root"/>
 
 </odoo>

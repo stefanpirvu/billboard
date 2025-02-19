@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+
+        <record id="billboard_pelicula_model_action" model="ir.actions.act_window">
+            <field name="name">Peliculas</field>
+            <field name="res_model">billboard.pelicula</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Vista tipo tree -->
+        <record id="billboard_pelicula_view_tree" model="ir.ui.view">
+            <field name="name">billboard.pelicula.tree</field>
+            <field name="model">billboard.pelicula</field>
+            <field name="arch" type="xml">
+                <tree string="Película">
+                    <field name="titulo"/>
+                    <field name="genero"/>
+                    <field name="duracion"/>
+                    <field name="clasificacion"/>
+                    <field name="fecha_estreno"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista tipo form -->
+        <record id="billboard_property_view_form" model="ir.ui.view">
+            <field name="name">billboard.pelicula.form</field>
+            <field name="model">billboard.pelicula</field>
+            <field name="arch" type="xml">
+                <form string="Película">
+                    <sheet>
+                        <group>
+                            <field name="titulo"/>
+                            <field name="genero"/>
+                            <field name="duracion"/>
+                            <field name="clasificacion"/>
+                            <field name="fecha_estreno"/>
+                            <field name="descripcion"/>
+                            <div class="image-container">
+                                <field name="imagen_portada" widget="image" class="img-fluid" style="max-width: 200px; height: auto;" />
+                            </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
