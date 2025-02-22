@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
 
@@ -24,8 +25,8 @@
         </record>
 
         <!-- Vista tipo form -->
-        <record id="billboard_property_view_form" model="ir.ui.view">
-            <field name="name">billboard.pelicula.form</field>
+        <record id="billboard_pelicula_view_form" model="ir.ui.view">
+            <field name="name">billboard_pelicula.form</field>
             <field name="model">billboard.pelicula</field>
             <field name="arch" type="xml">
                 <form string="Película">
@@ -34,6 +35,8 @@
                             <field name="titulo"/>
                             <field name="genero"/>
                             <field name="duracion"/>
+                        </group>
+                        <group>
                             <field name="clasificacion"/>
                             <field name="fecha_estreno"/>
                             <field name="descripcion"/>

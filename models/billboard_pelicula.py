@@ -24,4 +24,4 @@ class BillboardPelicula(models.Model):
     fecha_estreno = fields.Date(required=True)
     descripcion = fields.Text()
     actores_principales = fields.Many2many('res.partner', string="Actores principales")
-    imagen_portada = fields.Binary("Portada", attachment=True, required=False)
+    imagen_portada = fields.Binary("Portada", attachment=True)
