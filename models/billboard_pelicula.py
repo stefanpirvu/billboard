@@ -2,6 +2,7 @@ from odoo import fields, models
 
 class BillboardPelicula(models.Model):
     _name = "billboard.pelicula"
+    _rec_name = "titulo"
 
     titulo = fields.Char(required=True)
     # Recomendación, usar los "tags"

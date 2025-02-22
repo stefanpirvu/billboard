@@ -2,6 +2,7 @@ from odoo import fields, models
 
 class BillboardSala(models.Model):
     _name = "billboard.sala"
+    _rec_name = "nombre"
 
     nombre = fields.Char(required=True)
     capacidad = fields.Integer(required=True, default=1)

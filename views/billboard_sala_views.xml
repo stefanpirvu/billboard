@@ -9,7 +9,7 @@
 
         <!-- Vista tipo tree -->
         <record id="billboard_sala_view_tree" model="ir.ui.view">
-            <field name="name">billboard.sala.tree</field>
+            <field name="name">billboard_sala.tree</field>
             <field name="model">billboard.sala</field>
             <field name="arch" type="xml">
                 <tree string="Sala">
@@ -28,8 +28,12 @@
             <field name="arch" type="xml">
                 <form string="Sala">
                     <sheet>
+                        <div class="oe_title">
+                            <h1 class="mb32">
+                            <field name="nombre" class="mb16"/>
+                            </h1>
+                        </div>
                         <group>
-                            <field name="nombre"/>
                             <field name="capacidad"/>
                             <field name="tipoDeSala" string="Tipo de Sala"/>
                             <field name="estado"/>

@@ -10,7 +10,7 @@
 
         <!-- Vista tipo tree -->
         <record id="billboard_pelicula_view_tree" model="ir.ui.view">
-            <field name="name">billboard.pelicula.tree</field>
+            <field name="name">billboard_pelicula.tree</field>
             <field name="model">billboard.pelicula</field>
             <field name="arch" type="xml">
                 <tree string="Película">
@@ -31,8 +31,12 @@
             <field name="arch" type="xml">
                 <form string="Película">
                     <sheet>
+                        <div class="oe_title">
+                            <h1 class="mb32">
+                            <field name="titulo" class="mb16"/>
+                            </h1>
+                        </div>
                         <group>
-                            <field name="titulo"/>
                             <field name="genero"/>
                             <field name="duracion"/>
                         </group>

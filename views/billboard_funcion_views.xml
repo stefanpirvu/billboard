@@ -9,14 +9,14 @@
 
         <!-- Vista tipo tree -->
         <record id="billboard_funcion_view_tree" model="ir.ui.view">
-            <field name="name">billboard.funcion.tree</field>
+            <field name="name">billboard_funcion.tree</field>
             <field name="model">billboard.funcion</field>
             <field name="arch" type="xml">
                 <tree string="Función">
                     <field name="pelicula"/>
                     <field name="sala"/>
-                    <field name="fecha_y_hora_inicio" string="Tipo de Sala"/>
-                    <field name="fecha_y_hora_fin"/>
+                    <field name="fecha_y_hora_inicio" string="Fecha y hora de inicio"/>
+                    <field name="fecha_y_hora_fin" string="Fecha y hora fin"/>
                     <field name="precio_entrada"/>
                     <field name="estado"/>
                 </tree>
@@ -30,11 +30,15 @@
             <field name="arch" type="xml">
                 <form string="Función">
                     <sheet>
+                        <div class="oe_title">
+                            <h1 class="mb32">
+                            <field name="pelicula" class="mb16"/>
+                            <field name="sala" class="mb16"/>
+                            </h1>
+                        </div>
                         <group>
-                                <field name="pelicula"/>
-                                <field name="sala"/>
-                                <field name="fecha_y_hora_inicio" string="Tipo de Sala"/>
-                                <field name="fecha_y_hora_fin"/>
+                                <field name="fecha_y_hora_inicio" string="Fecha y hora de incio"/>
+                                <field name="fecha_y_hora_fin" string="Fecha y hora de fin"/>
                                 <field name="precio_entrada"/>
                                 <field name="estado"/>
                         </group>
@@ -42,6 +46,6 @@
                 </form>
             </field>
         </record>
-
+        
     </data>
 </odoo>
