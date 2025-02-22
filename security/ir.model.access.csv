@@ -1,4 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_billboard_pelicula_user,billboard_pelicula.access,model_billboard_pelicula,base.group_user,1,1,1,1
 access_billboard_sala_user,billboard_sala.access,model_billboard_sala,base.group_user,1,1,1,1
+access_billboard_pelicula_user,billboard_pelicula.access,model_billboard_pelicula,base.group_user,1,1,1,1
 access_billboard_funcion_user,billboard_funcion.access,model_billboard_funcion,base.group_user,1,1,1,1

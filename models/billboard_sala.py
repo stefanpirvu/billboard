@@ -17,3 +17,5 @@ class BillboardSala(models.Model):
         ('Ocupada', 'Ocupada'),
     ], default='Disponible'
     )
+     # Relación One2many con el modelo "Funcion"
+    funciones_ids = fields.One2many('billboard.funcion', 'sala', string="Funciones")

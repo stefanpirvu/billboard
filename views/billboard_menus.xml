@@ -9,15 +9,19 @@
         id="billboard_menu_sala"
         name="Salas"
         parent="billboard_menu_root"/>
+        <!-- action="billboard_sala_model_action" /> -->
 
     <menuitem
         id="billboard_menu_pelicula"
         name="Peliculas"
         parent="billboard_menu_root"/>
+        <!-- action="billboard_pelicula_model_action" /> -->
 
     <menuitem
         id="billboard_menu_funcion"
         name="Funciones"
         parent="billboard_menu_root"/>
+        <!-- action="billboard_funcion_model_action" /> -->
+        
 
 </odoo>

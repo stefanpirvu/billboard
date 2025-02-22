@@ -24,7 +24,7 @@
         </record>
 
         <!-- Vista tipo form -->
-        <record id="billboard_funcion_view_form" model="ir.ui.view">
+        <record id="billboard_property_view_form" model="ir.ui.view">
             <field name="name">billboard.funcion.form</field>
             <field name="model">billboard.funcion</field>
             <field name="arch" type="xml">

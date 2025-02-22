@@ -24,7 +24,7 @@
         </record>
 
         <!-- Vista tipo form -->
-        <record id="billboard_sala_view_form" model="ir.ui.view">
+        <record id="billboard_property_view_form" model="ir.ui.view">
             <field name="name">billboard.pelicula.form</field>
             <field name="model">billboard.pelicula</field>
             <field name="arch" type="xml">
@@ -38,7 +38,7 @@
                             <field name="fecha_estreno"/>
                             <field name="descripcion"/>
                             <div class="image-container">
-                                <field name="imagen_portada" widget="image" class="img-fluid" style="max-width: 200px; height: auto;" />
+                                <field name="imagen_portada" widget="image" class="img-fluid" style="width: 600px; height: auto;" />
                             </div>
                         </group>
                     </sheet>

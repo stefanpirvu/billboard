@@ -19,7 +19,9 @@ class BillboardPelicula(models.Model):
         ('7', 'No recomendada para menores de 7 años'),
         ('12', 'No recomendada para menores de 12 años'),
         ('16', 'No recomendada para menores de 16 años'),
+        ('18', 'No recomendada para menores de 18 años'),
     ])
     fecha_estreno = fields.Date(required=True)
     descripcion = fields.Text()
+    actores_principales = fields.Many2many('res.partner', string="Actores principales")
     imagen_portada = fields.Binary("Portada", attachment=True, required=False)
