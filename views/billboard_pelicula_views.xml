@@ -8,7 +8,6 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <!-- Vista tipo tree -->
         <record id="billboard_pelicula_view_tree" model="ir.ui.view">
             <field name="name">billboard_pelicula.tree</field>
             <field name="model">billboard.pelicula</field>
@@ -24,7 +23,6 @@
             </field>
         </record>
 
-        <!-- Vista tipo form -->
         <record id="billboard_pelicula_view_form" model="ir.ui.view">
             <field name="name">billboard_pelicula.form</field>
             <field name="model">billboard.pelicula</field>
@@ -37,18 +35,74 @@
                             </h1>
                         </div>
                         <group>
-                            <field name="genero"/>
-                            <field name="duracion"/>
-                            <field name="clasificacion"/>
-                            <field name="fecha_estreno"/>
-                            <field name="descripcion"/>
-                            <field name="actores_principales" widget="many2many_tags"/>
-                            <div class="image-container">
-                                <field name="imagen_portada" widget="image" class="img-fluid" style="width: 600px; height: auto;" />
-                            </div>
+                            <group string="Portada">
+                                <div class="image-container">
+                                    <field name="imagen_portada" widget="image" class="img-fluid" style="width: 600px; height: auto;" />
+                                </div>
+                            </group>
+                            <group string="Datos generales">
+                                <field name="genero"/>
+                                <field name="duracion"/>
+                                <field name="clasificacion"/>
+                            </group>
+                            <group string="Más datos">
+                                <field name="fecha_estreno"/>
+                                <field name="descripcion"/>
+                                <field name="actores_principales" 
+                                widget="many2many_tags"/>
+                            </group>
+                            <notebook>
+                                <page string="Funciones">
+                                    <field name="funcion_ids">
+
+                                        <tree editable="bottom">
+                                            <field name="sala"/>
+                                            <field name="fecha_y_hora_inicio" string="Inicio"/>
+                                            <field name="fecha_y_hora_fin" string="Fin"/>
+                                            <field name="precio_entrada"/>
+                                            <field name="estado"/>
+                                        </tree>
+
+                                        <form string="Función">
+                                            <group>
+                                                <field name="sala"/>
+                                                <field name="fecha_y_hora_inicio"/>
+                                                <field name="fecha_y_hora_fin"/>
+                                                <field name="precio_entrada"/>
+                                                <field name="estado"/>
+                                            </group>
+                                        </form>
+                                        
+                                    </field>
+                                </page>
+                            </notebook>
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <record id="billboard_pelicula_view_search" model="ir.ui.view">
+            <field name="name">billboard_pelicula.search</field>
+            <field name="model">billboard.pelicula</field>
+            <field name="arch" type="xml">
+                <search string="Filtrar películas">
+                    <field name="genero"/>
+                    <field name="clasificacion"/>
+
+                    <filter name="genero_accion" string="Acción" domain="[('genero', '=', 'Acción')]" />
+                    <filter name="genero_drama" string="Drama" domain="[('genero', '=', 'Drama')]" />
+                    <filter name="genero_comedia" string="Comedia" domain="[('genero', '=', 'Comedia')]" />
+                    <filter name="genero_ciencia_ficción" string="Ciencia Ficción" domain="[('genero', '=', 'Ciencia Ficción')]" />
+                    <filter name="genero_terror" string="Terror" domain="[('genero', '=', 'Terror')]" />
+                    <filter name="genero_animacion" string="Animación" domain="[('genero', '=', 'Animación')]" />
+
+                    <filter name="clasificacion_todo_publico" string="Apta para todos" domain="[('clasificacion', '=', '0')]" />
+                    <filter name="clasificacion_7" string="Mayores de 7" domain="[('clasificacion', '=', '7')]" />
+                    <filter name="clasificacion_12" string="Mayores de 12" domain="[('clasificacion', '=', '12')]" />
+                    <filter name="clasificacion_12" string="Mayores de 16" domain="[('clasificacion', '=', '16')]" />
+                    <filter name="clasificacion_12" string="Mayores de 18" domain="[('clasificacion', '=', '18')]" />
+                </search>
             </field>
         </record>
 

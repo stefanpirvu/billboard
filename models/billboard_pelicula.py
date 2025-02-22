@@ -5,7 +5,6 @@ class BillboardPelicula(models.Model):
     _rec_name = "titulo"
 
     titulo = fields.Char(required=True)
-    # Recomendación, usar los "tags"
     genero = fields.Selection(selection=[
         ('Acción', 'Acción'),
         ('Drama', 'Drama'),
@@ -25,4 +24,5 @@ class BillboardPelicula(models.Model):
     fecha_estreno = fields.Date(required=True)
     descripcion = fields.Text()
     actores_principales = fields.Many2many('res.partner', string="Actores principales")
+    funcion_ids = fields.One2many('billboard.funcion', 'pelicula', string="Funciones")
     imagen_portada = fields.Binary("Portada", attachment=True)

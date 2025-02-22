@@ -7,7 +7,6 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <!-- Vista tipo tree -->
         <record id="billboard_funcion_view_tree" model="ir.ui.view">
             <field name="name">billboard_funcion.tree</field>
             <field name="model">billboard.funcion</field>
@@ -23,24 +22,31 @@
             </field>
         </record>
 
-        <!-- Vista tipo form -->
         <record id="billboard_funcion_view_form" model="ir.ui.view">
             <field name="name">billboard_funcion.form</field>
             <field name="model">billboard.funcion</field>
             <field name="arch" type="xml">
                 <form string="Función">
+                    <header>
+                        <button name="action_iniciar_funcion" string="Iniciar Función" type="object" class="oe_highlight"/>
+                        <field name="estado" widget="statusbar"/>                    
+                    </header>
                     <sheet>
                         <div class="oe_title">
                             <h1 class="mb32">
-                            <field name="pelicula" class="mb16"/>
-                            <field name="sala" class="mb16"/>
+                                <field name="pelicula" class="mb16"/>
+                                <field name="sala" class="mb16"/>
                             </h1>
                         </div>
                         <group>
-                                <field name="fecha_y_hora_inicio" string="Fecha y hora de incio"/>
-                                <field name="fecha_y_hora_fin" string="Fecha y hora de fin"/>
+                            <group>
+                                <field name="fecha_y_hora_inicio" string="Fecha y hora de inicio"/>
+                                <field name="fecha_y_hora_fin" string="Fecha y hora de fin" invisible="estado == 'Programada'"/>
+                            </group>
+                            <group>
                                 <field name="precio_entrada"/>
                                 <field name="estado"/>
+                            </group>
                         </group>
                     </sheet>
                 </form>

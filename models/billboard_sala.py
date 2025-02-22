@@ -20,6 +20,11 @@ class BillboardSala(models.Model):
     )
     funciones_ids = fields.One2many('billboard.funcion', 'sala', string="Funciones")
 
+    def action_set_maintenance(self):
+        """Método para marcar la sala como en mantenimiento."""
+        for sala in self:
+            sala.estado = 'En mantenimiento'
+
     _sql_constraints = [
         ('cantidad_min', 'CHECK(cantidad >= 1)', 'La cantidad debe ser mayor o igual a 1.')
     ]
