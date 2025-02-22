@@ -5,7 +5,7 @@ class BillboardSala(models.Model):
     _rec_name = "nombre"
 
     nombre = fields.Char(required=True)
-    capacidad = fields.Integer(required=True, default=1)
+    capacidad = fields.Integer(required=True)
     tipoDeSala = fields.Selection(selection=[
         ('2D', '2D'),
         ('3D', '3D'),
@@ -18,5 +18,8 @@ class BillboardSala(models.Model):
         ('Ocupada', 'Ocupada'),
     ], default='Disponible'
     )
-     # Relación One2many con el modelo "Funcion"
     funciones_ids = fields.One2many('billboard.funcion', 'sala', string="Funciones")
+
+    _sql_constraints = [
+        ('cantidad_min', 'CHECK(cantidad >= 1)', 'La cantidad debe ser mayor o igual a 1.')
+    ]

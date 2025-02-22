@@ -39,11 +39,10 @@
                         <group>
                             <field name="genero"/>
                             <field name="duracion"/>
-                        </group>
-                        <group>
                             <field name="clasificacion"/>
                             <field name="fecha_estreno"/>
                             <field name="descripcion"/>
+                            <field name="actores_principales" widget="many2many_tags"/>
                             <div class="image-container">
                                 <field name="imagen_portada" widget="image" class="img-fluid" style="width: 600px; height: auto;" />
                             </div>

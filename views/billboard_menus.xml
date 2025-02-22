@@ -5,23 +5,27 @@
         id="billboard_menu_root"
         name="Cinema Billboard"/>
 
+    <menuitem
+        id="billboard_menu_cine"
+        name="Cine"
+        parent="billboard_menu_root"/>
 
     <menuitem
         id="billboard_menu_pelicula"
         name="Peliculas"
-        parent="billboard_menu_root"
+        parent="billboard_menu_cine"
         action="billboard_pelicula_model_action" />
     
     <menuitem
         id="billboard_menu_sala"
         name="Salas"
-        parent="billboard_menu_root"
+        parent="billboard_menu_cine"
         action="billboard_sala_model_action" />
 
     <menuitem
         id="billboard_menu_funcion"
         name="Funciones"
-        parent="billboard_menu_root"
+        parent="billboard_menu_cine"
         action="billboard_funcion_model_action" />
 
 </odoo>

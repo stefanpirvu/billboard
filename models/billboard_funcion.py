@@ -15,10 +15,10 @@ class BillboardFuncion(models.Model):
         ('Finalizada', 'Finalizada'),
     ], default='Programada')
 
-    @api.depends('fecha_y_hora_inicio', 'pelicula.duracion')  # Dependemos de la duracion de la pelicula
+    @api.depends('fecha_y_hora_inicio', 'pelicula.duracion')
     def _compute_fecha_y_hora_fin(self):
         for record in self:
-            if record.fecha_y_hora_inicio and record.pelicula.duracion:  # Aseguramos que haya inicio y duracion de pelicula
+            if record.fecha_y_hora_inicio and record.pelicula.duracion:
                 record.fecha_y_hora_fin = record.fecha_y_hora_inicio + timedelta(minutes=record.pelicula.duracion)
             else:
                 record.fecha_y_hora_fin = False
