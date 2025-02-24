@@ -19,6 +19,7 @@
                     <field name="clasificacion"/>
                     <field name="fecha_estreno"/>
                     <field name="descripcion"/>
+                    <field name="rodaje"></field>
                 </tree>
             </field>
         </record>
@@ -44,6 +45,7 @@
                                 <field name="genero"/>
                                 <field name="duracion"/>
                                 <field name="clasificacion"/>
+                                <field name="rodaje"></field>
                             </group>
                             <group string="Más datos">
                                 <field name="fecha_estreno"/>

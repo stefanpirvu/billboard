@@ -26,3 +26,4 @@ class BillboardPelicula(models.Model):
     actores_principales = fields.Many2many('res.partner', string="Actores principales")
     funcion_ids = fields.One2many('billboard.funcion', 'pelicula', string="Funciones")
     imagen_portada = fields.Binary("Portada", attachment=True)
+    rodaje = fields.Char(default="Madrid")

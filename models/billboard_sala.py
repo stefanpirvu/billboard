@@ -26,5 +26,5 @@ class BillboardSala(models.Model):
             sala.estado = 'En mantenimiento'
 
     _sql_constraints = [
-        ('cantidad_min', 'CHECK(cantidad >= 1)', 'La cantidad debe ser mayor o igual a 1.')
+        ('cantidad_min', 'CHECK(capacidad >= 1)', 'La cantidad debe ser mayor o igual a 1.')
     ]
