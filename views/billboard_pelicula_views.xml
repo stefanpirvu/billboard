@@ -31,7 +31,7 @@
                     <sheet>
                         <div class="oe_title">
                             <h1 class="mb32">
-                            <field name="titulo" class="mb16"/>
+                                <field name="titulo" class="mb16"/>
                             </h1>
                         </div>
                         <group>
@@ -48,8 +48,7 @@
                             <group string="Más datos">
                                 <field name="fecha_estreno"/>
                                 <field name="descripcion"/>
-                                <field name="actores_principales" 
-                                widget="many2many_tags"/>
+                                <field name="actores_principales" widget="many2many_tags"/>
                             </group>
                             <notebook>
                                 <page string="Funciones">
@@ -72,7 +71,7 @@
                                                 <field name="estado"/>
                                             </group>
                                         </form>
-                                        
+
                                     </field>
                                 </page>
                             </notebook>
@@ -102,6 +101,8 @@
                     <filter name="clasificacion_12" string="Mayores de 12" domain="[('clasificacion', '=', '12')]" />
                     <filter name="clasificacion_12" string="Mayores de 16" domain="[('clasificacion', '=', '16')]" />
                     <filter name="clasificacion_12" string="Mayores de 18" domain="[('clasificacion', '=', '18')]" />
+
+                    <filter name="proximos_estrenos" string="Próximos Estrenos" domain="[('fecha_estreno', '>', context_today()), ('fecha_estreno', '<=', (context_today() + timedelta(days=30)))]"/>
                 </search>
             </field>
         </record>
