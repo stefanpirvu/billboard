@@ -102,7 +102,7 @@
                     <filter name="clasificacion_12" string="Mayores de 16" domain="[('clasificacion', '=', '16')]" />
                     <filter name="clasificacion_12" string="Mayores de 18" domain="[('clasificacion', '=', '18')]" />
 
-                    <filter name="proximos_estrenos" string="Próximos Estrenos" domain="[('fecha_estreno', '>', context_today()), ('fecha_estreno', '<=', (context_today() + timedelta(days=30)))]"/>
+                    <filter name="peliculas_no_estrenadas" string="Películas No Estrenadas" domain="[('fecha_estreno', '&gt;', context_today())]"/>
                 </search>
             </field>
         </record>
