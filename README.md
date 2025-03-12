@@ -38,6 +38,5 @@ Para reiniciar el servidor de Odoo y aplicar los cambios debemos hacerlo mediant
 
 Capturas de ejecución del módulo:
 
-![Vista del menú de películas](menu_peliculas.png)
-
-![Vista del formulario de películas](form_pelicula.png)
+![Primera presentación](Presentación_1.png)
+![Segunda presentación](Presentación_2.png)
